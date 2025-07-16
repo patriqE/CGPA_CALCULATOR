@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import Sidebar from "@/components/Sidebar";
 
 export default function Dashboard() {
   const [user, setUser] = useState<{ name: string; email: string } | null>(
     null
   );
   const [loading, setLoading] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
